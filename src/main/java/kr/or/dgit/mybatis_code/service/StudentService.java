@@ -12,7 +12,7 @@ public class StudentService {
 	private static final String nameSpace = "kr.or.dgit.mybatis_code.dao.StudentDao.";
 	
 	public List<Student> selectAllStudent(){
-		try(SqlSession sqlSession = MyBatisSqlSessionFactory.getSqlsessionfactroy().openSession();){
+		try(SqlSession sqlSession = MyBatisSqlSessionFactory.openSession();){
 			StudentDao dao = sqlSession.getMapper(StudentDao.class);
 			return dao.findAllStudents();
 		}

@@ -52,7 +52,7 @@ public class StudentServiceTest {
 	@Test
 	public void test4DeleteStudentByNo() {
 		Student std = new Student();
-		std.setStudId(4);
+		std.setStudId(6);
 		int res = studentService.deleteStudentByNo(std);
 		Assert.assertEquals(1, res);
 	}

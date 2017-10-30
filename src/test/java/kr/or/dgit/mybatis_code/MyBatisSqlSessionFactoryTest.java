@@ -12,22 +12,22 @@ import org.junit.Test;
 import kr.or.dgit.mybatis_code.utill.MyBatisSqlSessionFactory;
 
 public class MyBatisSqlSessionFactoryTest {
-	private static SqlSessionFactory factory;
+	private static SqlSession sqlSession;
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		System.out.println("setUpBeforClass()");
-		factory = MyBatisSqlSessionFactory.getSqlsessionfactroy();
+		sqlSession = MyBatisSqlSessionFactory.openSession();
 	}
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 		System.out.println("tearDownAfterClass()");
-		factory = null;
+		sqlSession = null;
 	}
 
 	@Test
 	public void test() {
-		Assert.assertNotNull(factory);
+		Assert.assertNotNull(sqlSession);
 	}
 	
 
